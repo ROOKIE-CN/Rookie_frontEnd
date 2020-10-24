@@ -8,19 +8,28 @@
       <el-progress :percentage="100" status="warning"></el-progress>
       <el-progress :percentage="50" status="exception"></el-progress>
     </div>
+    <!-- stylus测试 -->
+    <div class="stylus">
+      1231231111111111111111111111
+    </div>
+    <!-- 子组件 -->
+    <Header />
   </div>
 </template>
 
 <script>
+import Header from './Header'
   export default {
     methods: {
-      format(percentage) {
-        return percentage === 100 ? '满' : `${percentage}%`;
-      }
+
+    },
+    components: {
+      Header
     }
   };
 </script>
 
-<style  scoped>
-/* @import "~common/stylus/variable.styl" */
+<style lang="stylus" scoped>
+.stylus
+  font-size 100px
 </style>
