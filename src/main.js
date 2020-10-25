@@ -7,6 +7,6 @@ import ElementPlus from 'element-plus';
 import 'element-plus/lib/theme-chalk/index.css';
 
 import './assets/style/reset.css'
-// import 'stylus'
+// import 'stylus'啊这
 createApp(App).use(store).use(router).use(ElementPlus).mount('#app');
 
