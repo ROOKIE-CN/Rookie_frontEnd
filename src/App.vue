@@ -1,19 +1,21 @@
 <template>
   <div>
-    <home />
-    <!-- <login /> -->
-    <router-link to="/Login"></router-link>
-    <!-- <router-view/> -->
+    <!-- <home /> -->
+    <router-link to="/header">
+      abc
+    </router-link>
+    <router-link to="/">
+      abc
+    </router-link>
   </div>
+  <router-view/>
 </template>
 
 <script>
-// import login from './components/longin/login'
-import home from './components/Home/Home'
+// import home from './components/Home/Home'
 export default {
   components:{
-    home,
-    // login
+    // home
   }
 }
 </script>
