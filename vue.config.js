@@ -5,9 +5,4 @@ module.exports = {
       patterns: []
     }
   },
-  externals: {
-    'vue': 'Vue',
-    // 'element-ui': 'ElEMENT',
-    'element-ui': 'ElementUI',
-  }
 }
