@@ -4,5 +4,10 @@ module.exports = {
       preProcessor: 'stylus',
       patterns: []
     }
+  },
+  externals: {
+    'vue': 'Vue',
+    // 'element-ui': 'ElEMENT',
+    'element-ui': 'ElementUI',
   }
 }
