@@ -1,13 +1,8 @@
 <template>
   <div>
-   空,自行更改
+    <div class="aaa">自行修改</div>
+  </div>
 </template>
 
-<script>
-
-export default {
-  components:{
-
-  }
-}
-</script>
+<style  scoped>
+</style>
