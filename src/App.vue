@@ -1,5 +1,6 @@
 <template>
   <div>
+<<<<<<< HEAD
     <home />
     <!-- <router-view/> -->
   </div>
@@ -13,3 +14,11 @@ export default {
   }
 }
 </script>
+=======
+    <div class="aaa">自行修改</div>
+  </div>
+</template>
+
+<style  scoped>
+</style>
+>>>>>>> master
