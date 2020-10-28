@@ -1,23 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import header from '../components/Home/Header.vue'
-import home from '../components/Home/Home.vue'
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: home
-  },
-  {
-    path: '/header',
-    name: 'header',
-    component: header
-  }
-]
+Vue.use(Router)
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }
+  ]
 })
-
-export default router
