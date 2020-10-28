@@ -1,21 +1,18 @@
 <template>
   <div>
-    <!-- <home /> -->
-    <router-link to="/header">
-      abc
-    </router-link>
-    <router-link to="/">
-      abc
-    </router-link>
+    <div class="aaa">自行修改</div>
   </div>
-  <router-view/>
 </template>
-
 <script>
-// import home from './components/Home/Home'
-export default {
-  components:{
-    // home
-  }
-}
+  // let params = {}
+  // this.$get("/user/test", params).then(res => {
+  //     if (!res.error_code) {
+  //         console.log(res.response_data,'res')
+  //     } else {
+  //         this.$toast(res.error_msg);
+  //         console.log(res.error_msg,'error')
+  //     }
+  // })
 </script>
+<style  scoped>
+</style>
