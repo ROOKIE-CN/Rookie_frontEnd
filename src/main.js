@@ -9,9 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI);
 
 import axios from 'axios'
-import VueAxios from 'vue-axios'
-
-Vue.use(VueAxios,axios);
+// import VueAxios from 'vue-axios'
+axios.defaults.baseURL = "http://192.168.137.1:25575/"
+Vue.use(axios);
 Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
