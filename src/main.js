@@ -14,6 +14,8 @@ axios.defaults.baseURL = "http://192.168.137.1:25575/"
 Vue.use(axios);
 Vue.prototype.$axios = axios;
 
+import './assets/reset.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
