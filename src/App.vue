@@ -1,8 +1,16 @@
 <template>
   <div>
-    <div class="aaa">自行修改</div>
+    <Home />
   </div>
 </template>
+<script>
+import Home from './components/Home/Home'
+  export default {
+    components:{
+      Home
+    }
+  };
+</script>
+<style lang='stylus'  scoped>
 
-<style  scoped>
 </style>

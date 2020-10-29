@@ -10,9 +10,11 @@ Vue.use(ElementUI);
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
-Vue.use(VueAxios,axios);
+// axios.defaults.baseURL = "http://192.168.137.1:25575/"
+Vue.use(VueAxios, axios);
 Vue.prototype.$axios = axios;
+
+import './assets/style/reset.css'
 
 Vue.config.productionTip = false
 
