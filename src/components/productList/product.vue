@@ -13,7 +13,6 @@
 
             <el-col :span="16">
                 <img src="@/assets/iphone.jpg" alt="iphone" class="iphone img-responsive">
-
                 <div class="pdt_nav">
                     <el-row justify="space-around">
                         <el-col :span="2">
@@ -25,7 +24,7 @@
                                  v-for="(value , index) in classification"
                                  :key="index"
                                  :class="value.flg?'active':''"
-                                 @click="active(value,0)"
+                                 @click="active(value,0);changeBrand(value.id)"
                                 >
                                     {{ value.classifyName }}
                                 </li>
@@ -43,7 +42,7 @@
                                  v-for="(value , index) in brand"
                                  :key="index"
                                  :class="value.flg?'active':''"
-                                 @click="active(value,1)"
+                                 @click="active(value,1);changeList(value.id)"
                                 >
                                   <span v-if="index <= 12">
                                     {{ value.brandName }}
@@ -55,7 +54,7 @@
                                     <span v-show="more">{{ value.brandName }}</span>
                                   </transition>
                                 </li>
-                            </ul>
+                            </ul>&nbsp;
                         </el-col>
                         <el-col class="more" :span="3">
                           <el-button plain v-show="!more" @click="moreBranch()">更多<i class="el-icon-arrow-down"></i></el-button>
@@ -71,13 +70,16 @@
                      v-show="val.flg"
                     >
                       <a
-                      href="javascript:;"
-                        v-for="(value , ind) in val.content"
-                        :key="ind"
+                       href="javascript:;"
+                       v-for="(value , ind) in val.content"
+                       :key="ind"
+                       @click="jump(value.id)"
                       >
                         <div class="card">
-                          <img src="../../assets/1.png" alt="">
-                          <p>{{ value.title }} {{ ind }}</p>
+                          <div>
+                            <img :src="value.contentImg" alt="">
+                          </div>
+                          <p>{{ value.modelName }}</p>
                         </div>
                       </a>
                       <a v-if="sas(val) >= 1"></a>
@@ -90,8 +92,8 @@
                     <el-pagination
                       :background="true"
                       layout="pager"
-                      :total="pia"
-                      @click.native="aa($event.target)"
+                      :total="listLength"
+                      @click.native="pit($event.target)"
                     >
                     </el-pagination>
                   </div>
@@ -119,41 +121,49 @@ export default {
       });
       setTimeout(() => {
         this.classification = arr_classify;
-      }, 300);
-      // 品牌
-      let arr = null;
-      this.$axios.get("/api/brand/findAll").then(function (res){
-        arr = res.data.data.list;
-        for(let i of arr){
-          i.flg = false;
-        }
-        arr[0].flg = true;
-      }).catch(err => {
-        console.log(err);
-      });
-      setTimeout(() => {
-        this.brand = arr;
-        for(let i of this.brand){
-          console.log(i.brandName,i.id);
-        }
-      }, 300);
-      // 商品列表
-      let num = Math.ceil(this.pdtList.length/20);
-      for(let i = 0; i < num; i++){
-        let arr = this.pdtList.splice(0,20);
-        let obj = {flg : false};
-        obj.content = arr;
-        this.list.push(obj);
-      };
-      this.list[0].flg = true;
-      
-      setTimeout(() => {
-        this.$axios.get(`/api/model/search?brandId=${this.brand[0].id}`).then(function (res){
-          console.log(res.data.data.list);
+        
+        // 品牌
+        let arr_brand = null;
+        this.$axios.get(`/api/brand/findAll?classifyId=${this.classification[0].id}`).then(function (res){
+          arr_brand = res.data.data.list;
+          if(arr_brand.length != 0){
+            for(let i of arr_brand){
+              i.flg = false;
+            }
+            arr_brand[0].flg = true;
+          }
         }).catch(err => {
           console.log(err);
         });
-      }, 350);
+        setTimeout(() => {
+          this.brand = arr_brand;
+
+          // 商品列表
+          if(this.brand.length != 0){
+            let arr_list = [];
+            let sum = null;
+            this.$axios.get(`/api/model/search?brandId=${this.brand[0].id}`).then(function (res){
+              sum = Math.ceil(res.data.data.list.length/20);
+              for(let i = 0; i < sum; i++){
+                let arr = res.data.data.list.splice(0,20);
+                let obj = {flg : false};
+                obj.content = arr;
+                arr_list.push(obj);
+                arr_list[0].flg = true;
+              };
+            }).catch(err => {
+              console.log(err);
+            });
+            setTimeout(() => {
+              this.list = arr_list;
+              this.listLength = sum * 10;
+            }, 200);
+          }
+
+        }, 200);
+
+      }, 300);
+
     },
     data (){
         return {
@@ -240,7 +250,7 @@ export default {
               {title : "aaaaaa"}
             ],
             list : [],
-
+            listLength : null
         }
     },
     methods : {
@@ -250,10 +260,13 @@ export default {
               for(let i of this.classification){
                   i.flg = false;
               }
-              for(let o of this.brand){
+              if(this.brand.length != 0){
+                for(let o of this.brand){
                   o.flg = false;
+                }
+                this.brand[0].flg = true;
               }
-              this.brand[0].flg = true;
+              
           }else if(n == 1){
               for(let i of this.brand){
                   i.flg = false;
@@ -264,7 +277,7 @@ export default {
       moreBranch(){
           this.more = !this.more;
       },
-      aa(e){
+      pit(e){
         let type = Number(e.innerHTML.trim());
         if(isNaN(type) || type == 0){
           return 
@@ -283,6 +296,69 @@ export default {
         }else if(window.innerWidth > 1024){
           return e.content.length % 4;
         }
+      },
+      changeBrand(id){
+        let arr = null;
+        this.$axios.get(`/api/brand/findAll?classifyId=${id}`).then(function (res){
+          arr = res.data.data.list;
+          if(arr.length != 0){
+            for(let i of arr){
+              i.flg = false;
+            }
+            arr[0].flg = true;
+          }
+        }).catch(err => {
+          console.log(err);
+        });
+        setTimeout(() => {
+          this.brand = arr;
+          if(this.brand.length != 0){
+            let arr_list = [];
+            let sum = null;
+            this.$axios.get(`/api/model/search?brandId=${this.brand[0].id}`).then(function (res){
+              sum = Math.ceil(res.data.data.list.length/20);
+              for(let i = 0; i < sum; i++){
+                let arr = res.data.data.list.splice(0,20);
+                let obj = {flg : false};
+                obj.content = arr;
+                arr_list.push(obj);
+                arr_list[0].flg = true;
+              };
+            }).catch(err => {
+              console.log(err);
+            });
+            setTimeout(() => {
+              this.list = arr_list;
+              this.listLength = sum * 10;
+            }, 200);
+          }else{
+            this.list = [];
+          }
+
+        },190);
+      },
+      changeList(id){
+        let arr_list = [];
+        let sum = null;
+        this.$axios.get(`/api/model/search?brandId=${id}`).then(function (res){
+          sum = Math.ceil(res.data.data.list.length/20);
+          for(let i = 0; i < sum; i++){
+            let arr = res.data.data.list.splice(0,20);
+            let obj = {flg : false};
+            obj.content = arr;
+            arr_list.push(obj);
+            arr_list[0].flg = true;
+          };
+        }).catch(err => {
+          console.log(err);
+        });
+        setTimeout(() => {
+          this.list = arr_list;
+          this.listLength = sum * 10;
+        },200);
+      },
+      jump(id){
+        console.log(id);
       }
     },
     computed : {
@@ -362,13 +438,20 @@ export default {
 .pdt_c
   .card
     width 100%
+    height 100%
     padding 40px 0
     background-color #ffffff
 .pdt_c
   .card
-    img
+    div
       width 50%
+      height 70%
       margin 0 auto
+.pdt_c
+  .card
+    div
+      img
+        width 100%
 .pdt_c
   .card
     p
