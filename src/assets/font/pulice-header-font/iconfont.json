@@ -1,0 +1,58 @@
+{
+  "id": "2166273",
+  "name": "picule-header",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "539609",
+      "name": "百度",
+      "font_class": "baidu1",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "4227097",
+      "name": "今日头条",
+      "font_class": "jinritoutiao1",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "7385725",
+      "name": "360",
+      "font_class": "icon-test",
+      "unicode": "e721",
+      "unicode_decimal": 59169
+    },
+    {
+      "icon_id": "4528214",
+      "name": "最右",
+      "font_class": "zuiyou",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6068280",
+      "name": "百度",
+      "font_class": "baidu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "6068379",
+      "name": "今日头条",
+      "font_class": "jinritoutiao",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "8017326",
+      "name": "360",
+      "font_class": "-",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
