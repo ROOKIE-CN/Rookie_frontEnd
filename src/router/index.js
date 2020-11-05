@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'App',
-      component: App
+      component: () => import("../App.vue")
     }
   ]
 })

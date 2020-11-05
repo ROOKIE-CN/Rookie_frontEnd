@@ -3,7 +3,9 @@
     <el-row type="flex" class="row-bg" justify="center">
       <el-col :span="3" >
         <div class="grid-content bg_logo">
-          <img src="../../../assets/images/logo.png" alt="">
+          <a href="#">
+            <img src="../../../assets/images/logo.png" alt="">
+          </a>
         </div>
         </el-col>
       <el-col :span="3" :offset="1">
@@ -24,12 +26,8 @@
 </template>
 
 <script>
-// import middle from './middle'
-// import right from './right'
 export default {
   components: {
-    // middle,
-    // right
   },
 }
 </script>
@@ -43,7 +41,6 @@ export default {
   font-size 14px
   margin 15px 0
 .grid-content
-  // background-color #ccc
 .bg_logo
   height 56px
   width 100%

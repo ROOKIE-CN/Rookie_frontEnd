@@ -4,7 +4,7 @@
       class="input"
       v-model="state"
       :fetch-suggestions="querySearchAsync"
-      placeholder="请输入内容"
+      placeholder="请输入机器型号"
       @select="handleSelect"
       @keyup.enter.native="c_search()"
     ></el-autocomplete>
@@ -105,7 +105,12 @@ export default {
 .h_input >>> .el-input__inner
   height 56px
   width 300px
-  border-radius 0
+  border 2px solid rgb(131, 216, 56)
+  border-radius 10px 0 0 10px
+
+.h_input:hover >>> .el-input__inner
+  border 2px solid rgba(131, 216, 56, .7)
+
 
 .h_input
   width 100%
@@ -119,7 +124,8 @@ export default {
   height 56px
   float left
   background #83D838
-  border-radius 0 5px 5px 0
+  transition background .5s
+  border-radius 0 10px 10px 0
   i
     width 30px
     display block
@@ -127,4 +133,7 @@ export default {
     line-height 56px
     cursor pointer
     color #fff
+
+.h_input:hover .search_left
+  background rgba(131, 216, 56, .7)
 </style>
