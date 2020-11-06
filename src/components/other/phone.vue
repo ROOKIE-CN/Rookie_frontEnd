@@ -7,7 +7,7 @@
     />
     <p class="phoneName">8848钛合金手机</p>
     <p>
-      <a href>重选机型 ></a>
+      <a href>重选机型</a>
     </p>
   </div>
 </template>

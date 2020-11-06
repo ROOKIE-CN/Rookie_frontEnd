@@ -1,7 +1,5 @@
 <template>
   <div id="fault">
-    <div class="aaa"></div>
-
     <div class="container">
       <crumbs></crumbs>
       <div class="problemLeft">
@@ -15,8 +13,6 @@
         <problem></problem>
       </div>
     </div>
-
-    <div class="bbb"></div>
   </div>
 </template>
 
@@ -43,15 +39,6 @@ export default {
 <style scoped lang="stylus">
 #fault
   overflow: hidden;
-  .aaa
-    width 100%
-    height 142px
-    background red
-  .bbb
-    width 100%
-    height 316px
-    background red
-    margin-top 36px
   .container
     overflow hidden
     width 1200px
