@@ -1,13 +1,21 @@
 <template>
   <div>
-    <Home />
+    <public-header></public-header>
+    <!-- <router-link to="/login">商家</router-link>
+    <router-link to="/Home">商家</router-link> -->
+    <router-view />
+    <public-bottom></public-bottom>
   </div>
 </template>
 <script>
+import publicHeader from "./components/public/header";
+import publicBottom from "./components/public/bottom";
 import Home from './components/Home/Home'
   export default {
     components:{
-      Home
+      Home,
+      publicHeader,
+      publicBottom
     }
   };
 </script>

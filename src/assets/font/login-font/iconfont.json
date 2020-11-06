@@ -1,0 +1,72 @@
+{
+  "id": "2150452",
+  "name": "rabbit_denglu",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10509466",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6316671",
+      "name": "QQ",
+      "font_class": "QQ2",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1642757",
+      "name": "QQ",
+      "font_class": "QQ1",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7687655",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "2183281",
+      "name": "微信",
+      "font_class": "weixin3",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "10416533",
+      "name": "锁",
+      "font_class": "suo",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "12699614",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "14906054",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e88b",
+      "unicode_decimal": 59531
+    },
+    {
+      "icon_id": "17013357",
+      "name": "微博",
+      "font_class": "weibo1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -15,6 +14,13 @@ axios.defaults.baseURL = "http://192.168.137.1:25575/"
 Vue.prototype.$axios = axios;
 
 import './assets/style/reset.css'
+
+
+import "./assets/font/login-font/iconfont.css";
+import "./assets/font/pulice-header-font/iconfont.css";
+import qs from "qs";
+Vue.prototype.qs = qs;
+
 
 Vue.config.productionTip = false
 
