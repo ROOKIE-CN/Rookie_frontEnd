@@ -1,0 +1,44 @@
+{
+  "id": "2149332",
+  "name": "rabbit",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10572764",
+      "name": "问号",
+      "font_class": "zu",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "11810072",
+      "name": "对勾",
+      "font_class": "duigou",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "14554681",
+      "name": "问好",
+      "font_class": "wenhao",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "9277565",
+      "name": "下箭头",
+      "font_class": "arrow-down",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "10780672",
+      "name": "盾牌",
+      "font_class": "dunpai",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    }
+  ]
+}

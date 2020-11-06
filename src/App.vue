@@ -1,24 +1,21 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <home />
-    <!-- <router-view/> -->
+    <div id="nav">
+      <!-- <router-link to="/">故障详情</router-link>
+      <router-link to="/Pay">预约付费</router-link> -->
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import home from './components/Home/Home'
-export default {
-  components:{
-    home
-  }
-}
-</script>
-=======
-    <div class="aaa">自行修改</div>
-  </div>
-</template>
-
-<style  scoped>
+<style lang="stylus">
+*
+  margin 0
+  padding 0
+body
+  background #efefef
+  li
+    list-style none
+  a
+    text-decoretion none
 </style>
->>>>>>> master

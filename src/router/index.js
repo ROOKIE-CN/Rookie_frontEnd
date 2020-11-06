@@ -1,34 +1,27 @@
-<<<<<<< HEAD
-import { createRouter, createWebHistory } from 'vue-router'
-import header from '../components/Home/Header.vue'
-import home from '../components/Home/Home.vue'
+import Vue from "vue";
+import Router from "vue-router";
+import Fault from "../components/fault";
+import Pay from "../components/pay";
+import Artificial from "../components/artificial";
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: home
-  },
-  {
-    path: '/header',
-    name: 'header',
-    component: header
-  }
-]
-=======
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
-Vue.use(Router)
->>>>>>> master
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: "/",
+      name: "Fault",
+      component: Fault
+    },
+    {
+      path: "/pay",
+      name: "Pay",
+      component: Pay
+    },
+    {
+      path: "/artificial",
+      name: "Artificial",
+      component: Artificial
     }
   ]
-})
+});
