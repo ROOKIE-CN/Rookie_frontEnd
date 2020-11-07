@@ -6,14 +6,12 @@
     </p>
     <p class="payMidPrice">
       <span>￥</span>
-      2010
-      <span>(定金金额:￥500)</span>
+      {{ price }}
+      <span>(定金金额:￥{{ Deposit() }})</span>
     </p>
     <div class="payMidButton">
       <el-row>
-        <el-button type="success" round @click="repairBtn()"
-          >预约维修</el-button
-        >
+        <el-button type="success" round @click="repairBtn()">预约维修</el-button>
       </el-row>
     </div>
   </div>
@@ -22,9 +20,17 @@
 <script>
 export default {
   name: "price",
+  data() {
+    return {
+      price: "8848",
+    }
+  },
   methods: {
     repairBtn() {
       alert("预约维修成功!!!");
+    },
+    Deposit() {
+      return this.price / 5
     }
   }
 };
@@ -39,7 +45,7 @@ export default {
   box-sizing border-box
   border-left 1px solid #f5f5f5
   border-right 1px solid #f5f5f5
-  padding 36px 0px 0px 36px
+  padding 36px 0 0 36px
   .payMidTitle
     line-height 30px
     color #666

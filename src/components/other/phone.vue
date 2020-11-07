@@ -5,9 +5,9 @@
       src="https://shopstatic.vivo.com.cn/vivoshop/commodity/83/10005883_1601437315978_250x250.png.webp"
       alt
     />
-    <p class="phoneName">8848钛合金手机</p>
+    <p class="phoneName" >8848钛合金手机</p>
     <p>
-      <a href>重选机型 ></a>
+      <router-link to="/product">重选机型</router-link>
     </p>
   </div>
 </template>

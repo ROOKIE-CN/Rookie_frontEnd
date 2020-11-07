@@ -25,20 +25,6 @@ export default {
   name: "attribute",
   data() {
     return {
-      buttonText: [
-        { title: "不能正常开机", flg: false },
-        { title: "通话不正常", flg: false },
-        { title: "屏幕更换/维修", flg: false },
-        { title: "电池更换/维修", flg: false },
-        { title: "触摸屏失灵/部分失灵", flg: false },
-        { title: "拍照摄像不正常", flg: false },
-        { title: "拍照有斑", flg: false },
-        { title: "机身进水/受潮", flg: false },
-        { title: "WiFi/蓝牙不正常", flg: false },
-        { title: "声音/麦克风/按键/充电/震动不正常", flg: false },
-        { title: "Face ID无法录入和识别", flg: false },
-        { title: "全新(整套/未激活/未使用)", flg: false }
-      ],
       buttonTextContent: ""
     };
   },
@@ -49,6 +35,7 @@ export default {
       .get("/api/model/malfunction/findAll")
       .then(res => {
         arr = res.data.data.list;
+        console.log(arr);
         for (let i of arr) {
           i.flg = false;
         }
@@ -88,9 +75,9 @@ export default {
       text-align center
       margin 0 1% 10px
       border 1px solid #e7e7e7
-      background #fff
+      background #ffffff
       border-radius 5px
-      color #333
+      color #ccc
       padding 0 55px
       /* 点击之后边框不变色 */
       outline none

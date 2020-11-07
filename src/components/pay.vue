@@ -1,7 +1,5 @@
 <template>
   <div id="pay">
-    <div class="aaa"></div>
-
     <div class="container">
       <crumbs></crumbs>
       <div class="payLeft">
@@ -12,8 +10,6 @@
       <payList></payList>
       <security></security>
     </div>
-
-    <div class="bbb"></div>
   </div>
 </template>
 
@@ -38,15 +34,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.aaa
-  width 100%
-  height 142px
-  background red
-.bbb
-  width 100%
-  height 316px
-  background red
-  margin-top 36px
 #pay
   overflow hidden
   .container
