@@ -1,7 +1,7 @@
 <template>
   <div>
     <public-header></public-header>
-    <!-- <router-link to="/product">商家</router-link>
+    <!-- <router-link to="/Fault">商家</router-link>
     <router-link to="/Home">商家</router-link> -->
     <router-view />
     <public-bottom></public-bottom>

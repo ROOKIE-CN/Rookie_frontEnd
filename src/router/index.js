@@ -5,7 +5,9 @@ import Home from "../components/Home/Home.vue"
 import register from "../components/register/register.vue";
 // 商品列表
 import product from "../components/productList/product.vue"
-
+// 故障详情
+import Fault from "../components/fault";
+import Pay from "../components/pay";
 Vue.use(Router);
 
 export default new Router({
@@ -34,6 +36,16 @@ export default new Router({
       path: "/product",
       name: "product",
       component: product
+    },{
+      path: "/Fault",
+      name: "Fault",
+      component: Fault
+    },
+    {
+      path: "/pay",
+      name: "Pay",
+      component: Pay
     }
+
   ]
 });
