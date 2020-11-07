@@ -3,6 +3,8 @@ import Router from "vue-router";
 import login from "../components/longin/login.vue";
 import Home from "../components/Home/Home.vue"
 import register from "../components/register/register.vue";
+// 商品列表
+import product from "../components/productList/product.vue"
 
 Vue.use(Router);
 
@@ -27,6 +29,11 @@ export default new Router({
       path: "/",
       name: "Home",
       component: Home
+    },
+    {
+      path: "/product",
+      name: "product",
+      component: product
     }
   ]
 });
